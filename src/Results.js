@@ -4,21 +4,34 @@ import "./Results.css";
 
 export default function Results(props) {
   if (props.results) {
-    return (
-      <div className="Results">
+    let hasMeanings = props.results.hasOwnProperty("meanings");
+    if (hasMeanings) {
+      return (
+        <div className="Results">
+          <section>
+            <h2>{props.results.word}</h2>
+            <div className="phonetic">/{props.results.phonetic}/</div>
+          </section>
+          {props.results.meanings.map(function (meaning, index) {
+            return (
+              <div key={index}>
+                <Meanings meaning={meaning} />
+              </div>
+            );
+          })}
+        </div>
+      );
+    } else {
+      return (
         <section>
-          <h2>{props.results.word}</h2>
-          <div className="phonetic">/{props.results.phonetic}/</div>
+          <h2>Oops!</h2>
+          <div>
+            Could not find a definition for that word. Check the spelling in
+            English or try a different word.
+          </div>
         </section>
-        {props.results.meanings.map(function (meaning, index) {
-          return (
-            <div key={index}>
-              <Meanings meaning={meaning} />
-            </div>
-          );
-        })}
-      </div>
-    );
+      );
+    }
   } else {
     return null;
   }

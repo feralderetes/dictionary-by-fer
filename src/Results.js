@@ -23,9 +23,9 @@ export default function Results(props) {
       );
     } else {
       return (
-        <section className="Error">
+        <section className="Results">
           <h2>Oops!</h2>
-          <div className="message">
+          <div className="definition">
             Could not find a definition for that word. Check the spelling in
             English or try a different word.
           </div>

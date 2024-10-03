@@ -9,3 +9,17 @@
   font-style: italic;
   opacity: 0.5;
 }
+
+@media (max-width: 456px) {
+  .Results h2 {
+    font-size: 30px;
+  }
+
+  .Results .definition {
+    font-size: 14px;
+  }
+
+  .Results .phonetic {
+    font-size: 16px;
+  }
+}

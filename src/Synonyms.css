@@ -6,8 +6,10 @@
 
 .Synonyms li {
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 10px;
   padding: 5px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(29, 42, 87, 0.05);
 }
 
 .Synonyms span {

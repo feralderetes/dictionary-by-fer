@@ -5,7 +5,7 @@ import "./Results.css";
 export default function Results(props) {
   if (props.results) {
     let hasMeanings = props.results.hasOwnProperty("meanings");
-    if (hasMeanings) {
+    if (hasMeanings && !props.error) {
       return (
         <div className="Results">
           <section>
